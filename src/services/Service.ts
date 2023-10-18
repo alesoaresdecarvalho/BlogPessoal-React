@@ -1,6 +1,6 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 
-const api = axios.create({
+const api: AxiosInstance = axios.create({
   baseURL: 'https://blogpessoalale.onrender.com'
 });
 
@@ -32,7 +32,3 @@ export const atualizar = async (url: string, dados: Object, setDados: Function, 
 export const deletar = async (url: string, header: Object) => {
   await api.delete(url, header);
 };
-
-export const baseApi = axios.create({
-  baseURL: import.meta.env.VITE_API_URL
-});
